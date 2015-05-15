@@ -1,20 +1,22 @@
-package com.eleronTest.model;
+package com.eleron.model;
+
+import java.util.UUID;
 
 /**
  * Created by alximik on 13/05/15.
  */
-public class BaseEntity {
-    private int uuid;
+public class AbstractDevice {
+    private UUID uuid;
     private String name;
     private String location;
 
-    public BaseEntity(int uuid, String name, String location) {
+    public AbstractDevice(UUID uuid, String name, String location) {
         this.uuid = uuid;
         this.name = name;
         this.location = location;
     }
 
-    public void setUuid(int uuid) {
+    public void setUuid(UUID uuid) {
         this.uuid = uuid;
     }
 
@@ -26,7 +28,7 @@ public class BaseEntity {
         this.location = location;
     }
 
-    public int getUuid() {
+    public UUID getUuid() {
 
         return uuid;
     }
@@ -53,7 +55,7 @@ public class BaseEntity {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        BaseEntity that = (BaseEntity) o;
+        AbstractDevice that = (AbstractDevice) o;
 
         if (uuid != that.uuid) return false;
 
@@ -62,6 +64,6 @@ public class BaseEntity {
 
     @Override
     public int hashCode() {
-        return uuid;
+        return uuid.hashCode();
     }
 }

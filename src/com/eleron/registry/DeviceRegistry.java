@@ -1,27 +1,28 @@
-package com.eleronTest.store;
+package com.eleron.registry;
 
-import com.eleronTest.model.BaseEntity;
+import com.eleron.model.AbstractDevice;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.UUID;
 
 /**
  * Created by alximik on 14/05/15.
  */
-public class DeviceStore {
-    private Map<Integer, BaseEntity> store = new HashMap<>();
+public class DeviceRegistry {
+    private Map<UUID, AbstractDevice> store = new HashMap<>();
 
 
-    public void save(BaseEntity device) {
+    public void save(AbstractDevice device) {
         store.put(device.getUuid(),device);
     }
 
-    public void delete(int uuid) {
+    public void delete(UUID uuid) {
         store.remove(uuid);
     }
 
     public void showAll() {
-        for (Map.Entry<Integer,BaseEntity> entry : store.entrySet()) {
+        for (Map.Entry<UUID,AbstractDevice> entry : store.entrySet()) {
             System.out.println(entry.getValue().toString());
         }
     }
@@ -30,7 +31,7 @@ public class DeviceStore {
         store.clear();
     }
 
-    public BaseEntity get(int deviceId) {
+    public AbstractDevice get(UUID deviceId) {
         return store.get(deviceId);
     }
 

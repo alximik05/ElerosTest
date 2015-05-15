@@ -1,9 +1,11 @@
-package com.eleronTest.model;
+package com.eleron.model;
+
+import java.util.UUID;
 
 /**
  * Created by alximik on 13/05/15.
  */
-public class Sensor extends BaseEntity {
+public class Sensor extends AbstractDevice {
 
     private boolean status;
 
@@ -15,7 +17,7 @@ public class Sensor extends BaseEntity {
         this.status = status;
     }
 
-    public Sensor(int uuid, String name, String location, boolean status) {
+    public Sensor(UUID uuid, String name, String location, boolean status) {
         super(uuid, name, location);
         this.status = status;
     }
