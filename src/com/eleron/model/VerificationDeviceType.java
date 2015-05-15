@@ -9,6 +9,7 @@ public enum VerificationDeviceType {
         SIMPLE
                 {
                     public boolean verify(byte[] calculated, byte[] standard){
+                        System.out.println("SIMPLE");
                         return Arrays.equals(calculated, standard);
                     }
                 },
@@ -31,6 +32,10 @@ public enum VerificationDeviceType {
                         System.out.println("ADVANCE");
                         return true;
                     }
-                }
+                };
+
+    public abstract boolean verify(byte[] calculated, byte[] standard);
+
+
 
 }

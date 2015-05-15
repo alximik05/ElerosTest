@@ -19,6 +19,7 @@ public class Main {
         Sensor sensor2 = new Sensor(UUID.randomUUID(), "second", "aes", false);
 
 
+
         store.save(device);
         store.save(device2);
         store.save(sensor);
