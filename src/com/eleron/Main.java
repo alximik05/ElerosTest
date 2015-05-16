@@ -11,14 +11,12 @@ public class Main {
 
     public static void main(String[] args) {
 
-
+        // Only for test showAll method
         DeviceRegistry store = new DeviceRegistry();
         VerificationDevice device = new VerificationDevice( UUID.randomUUID(), "first", "aes", VerificationDeviceType.ADVANCE);
         VerificationDevice device2 = new VerificationDevice(UUID.randomUUID(), "second", "aes", VerificationDeviceType.SIMPLE);
         Sensor sensor = new Sensor(UUID.randomUUID(), "first", "aes", true);
         Sensor sensor2 = new Sensor(UUID.randomUUID(), "second", "aes", false);
-
-
 
         store.save(device);
         store.save(device2);
